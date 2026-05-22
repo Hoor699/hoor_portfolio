@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hoorain Manzoor Hussain — Frontend Web Designer & Developer from Karachi, Pakistan. Creating modern, responsive digital experiences for brands and businesses.">
+    <meta name="keywords" content="Frontend Web Designer, Web Developer, Karachi, Pakistan, Portfolio, Hoorain, Responsive Design, UI/UX">
+    <title>Hoorain Manzoor Hussain — Frontend Web Designer & Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        pink: {
+                            50: '#FDF2F8', 100: '#FCE7F3', 200: '#FBCFE8', 300: '#F9A8D4',
+                            400: '#F472B6', 500: '#EC4899', 600: '#DB2777', 700: '#BE185D',
+                            800: '#9D174D', 900: '#831843',
+                        },
+                        beige: {
+                            50: '#FEFDFB', 100: '#FDF8F0', 200: '#FAF0E4', 300: '#F5E6D0', 400: '#EDD5B8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::selection { background: #F9A8D4; color: #831843; }
+
+        .glass { background: rgba(255,255,255,0.5); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.6); }
+        .glass-pink { background: rgba(252,231,243,0.5); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(249,168,212,0.3); }
+        .glass-dark { background: rgba(255,255,255,0.08); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.12); }
+
+        @keyframes float { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-20px) rotate(2deg)} }
+        @keyframes float-reverse { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(20px) rotate(-2deg)} }
+        @keyframes pulse-soft { 0%,100%{opacity:.6;transform:scale(1)} 50%{opacity:1;transform:scale(1.05)} }
+        @keyframes slide-up { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes scale-in { from{opacity:0;transform:scale(.9)} to{opacity:1;transform:scale(1)} }
+        @keyframes gradient-shift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+        @keyframes spin-slow { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+        @keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
+
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-float-reverse { animation: float-reverse 7s ease-in-out infinite; }
+        .animate-pulse-soft { animation: pulse-soft 3s ease-in-out infinite; }
+        .animate-spin-slow { animation: spin-slow 20s linear infinite; }
+
+        .reveal { opacity:0; transform:translateY(40px); transition: all .8s cubic-bezier(.16,1,.3,1); }
+        .reveal.active { opacity:1; transform:translateY(0); }
+        .reveal-left { opacity:0; transform:translateX(-40px); transition: all .8s cubic-bezier(.16,1,.3,1); }
+        .reveal-left.active { opacity:1; transform:translateX(0); }
+        .reveal-right { opacity:0; transform:translateX(40px); transition: all .8s cubic-bezier(.16,1,.3,1); }
+        .reveal-right.active { opacity:1; transform:translateX(0); }
+        .reveal-scale { opacity:0; transform:scale(.9); transition: all .8s cubic-bezier(.16,1,.3,1); }
+        .reveal-scale.active { opacity:1; transform:scale(1); }
+
+        .gradient-text { background:linear-gradient(135deg,#EC4899,#DB2777,#BE185D); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .gradient-text-animated { background:linear-gradient(135deg,#F472B6,#EC4899,#DB2777,#F472B6); background-size:300% 300%; animation:gradient-shift 4s ease infinite; -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+        .card-hover { transition: all .5s cubic-bezier(.16,1,.3,1); }
+        .card-hover:hover { transform:translateY(-8px); box-shadow: 0 25px 60px -15px rgba(236,72,153,.2); }
+
+        .btn-primary { background:linear-gradient(135deg,#EC4899,#DB2777); transition: all .4s cubic-bezier(.16,1,.3,1); position:relative; overflow:hidden; }
+        .btn-primary::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,#DB2777,#BE185D); opacity:0; transition:opacity .4s; }
+        .btn-primary:hover::before { opacity:1; }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 15px 35px -10px rgba(236,72,153,.5); }
+        .btn-primary span { position:relative; z-index:1; }
+
+        .btn-outline { border:2px solid #F9A8D4; transition: all .4s cubic-bezier(.16,1,.3,1); }
+        .btn-outline:hover { background:#FCE7F3; border-color:#EC4899; transform:translateY(-2px); }
+
+        .nav-blur { background:rgba(253,242,248,.85); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); }
+
+        .skill-bar { position:relative; overflow:hidden; }
+        .skill-bar::after { content:''; position:absolute; top:0; left:0; height:100%; width:0; border-radius:999px; transition:width 1.5s cubic-bezier(.16,1,.3,1); }
+        .skill-bar.active::after { width:var(--skill-width); }
+
+        input:focus, textarea:focus, select:focus { outline:none; border-color:#F472B6; box-shadow:0 0 0 4px rgba(244,114,182,.15); }
+
+        ::-webkit-scrollbar { width:8px; }
+        ::-webkit-scrollbar-track { background:#FDF2F8; }
+        ::-webkit-scrollbar-thumb { background:#F9A8D4; border-radius:4px; }
+        ::-webkit-scrollbar-thumb:hover { background:#EC4899; }
+
+        .toast { position:fixed; bottom:30px; right:30px; padding:16px 24px; border-radius:16px; z-index:9999; transform:translateY(100px); opacity:0; transition:all .5s cubic-bezier(.16,1,.3,1); }
+        .toast.show { transform:translateY(0); opacity:1; }
+
+        .mobile-menu { transform:translateX(100%); transition:transform .5s cubic-bezier(.16,1,.3,1); }
+        .mobile-menu.open { transform:translateX(0); }
+
+        .project-card-img { transition: transform .7s cubic-bezier(.16,1,.3,1); }
+        .project-card:hover .project-card-img { transform: scale(1.08); }
+        .project-card:hover .project-overlay { opacity: 1; }
+        .project-overlay { opacity: 0; transition: opacity .5s ease; }
+
+        .page-badge { animation: pulse-soft 2.5s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-beige-50 text-gray-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-gradient-to-br from-pink-50 via-white to-beige-100 flex items-center justify-center transition-opacity duration-700">
+        <div class="text-center">
+            <div class="relative w-20 h-20 mx-auto mb-6">
+                <div class="absolute inset-0 rounded-full border-2 border-pink-200"></div>
+                <div class="absolute inset-0 rounded-full border-2 border-transparent border-t-pink-500 animate-spin"></div>
+                <div class="absolute inset-2 rounded-full border-2 border-transparent border-b-pink-400 animate-spin" style="animation-direction:reverse;animation-duration:1.5s"></div>
+            </div>
+            <p class="text-pink-500 font-medium tracking-widest text-sm uppercase">Loading</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-pink-100/50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#hero" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500 to-pink-700 flex items-center justify-center text-white font-serif font-bold text-lg group-hover:scale-110 transition-transform duration-300">H</div>
+                    <span class="font-serif text-xl font-semibold text-gray-900">Hoorain</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#about" class="text-sm font-medium text-gray-600 hover:text-pink-600 transition-colors duration-300 relative group">About<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-pink-500 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="#skills" class="text-sm font-medium text-gray-600 hover:text-pink-600 transition-colors duration-300 relative group">Skills<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-pink-500 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="#services" class="text-sm font-medium text-gray-600 hover:text-pink-600 transition-colors duration-300 relative group">Services<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-pink-500 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="#projects" class="text-sm font-medium text-gray-600 hover:text-pink-600 transition-colors duration-300 relative group">Projects<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-pink-500 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="#experience" class="text-sm font-medium text-gray-600 hover:text-pink-600 transition-colors duration-300 relative group">Experience<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-pink-500 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="#contact" class="text-sm font-medium text-gray-600 hover:text-pink-600 transition-colors duration-300 relative group">Contact<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-pink-500 transition-all duration-300 group-hover:w-full"></span></a>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#contact" class="btn-primary text-white px-6 py-2.5 rounded-xl text-sm font-semibold inline-flex items-center gap-2">
+                        <span>Let's Talk</span>
+                        <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                    </a>
+                </div>
+                <button id="mobile-toggle" class="md:hidden w-10 h-10 rounded-xl glass flex items-center justify-center">
+                    <iconify-icon icon="lucide:menu" width="22" class="text-gray-700"></iconify-icon>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-0 z-[60] bg-gradient-to-br from-pink-50 via-white to-beige-100">
+        <div class="flex items-center justify-between p-6">
+            <a href="#hero" class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500 to-pink-700 flex items-center justify-center text-white font-serif font-bold text-lg">H</div>
+                <span class="font-serif text-xl font-semibold text-gray-900">Hoorain</span>
+            </a>
+            <button id="mobile-close" class="w-10 h-10 rounded-xl glass flex items-center justify-center">
+                <iconify-icon icon="lucide:x" width="22" class="text-gray-700"></iconify-icon>
+            </button>
+        </div>
+        <div class="flex flex-col items-center justify-center h-[70vh] gap-8">
+            <a href="#about" class="mobile-link text-2xl font-serif text-gray-800 hover:text-pink-600 transition-colors">About</a>
+            <a href="#skills" class="mobile-link text-2xl font-serif text-gray-800 hover:text-pink-600 transition-colors">Skills</a>
+            <a href="#services" class="mobile-link text-2xl font-serif text-gray-800 hover:text-pink-600 transition-colors">Services</a>
+            <a href="#projects" class="mobile-link text-2xl font-serif text-gray-800 hover:text-pink-600 transition-colors">Projects</a>
+            <a href="#experience" class="mobile-link text-2xl font-serif text-gray-800 hover:text-pink-600 transition-colors">Experience</a>
+            <a href="#contact" class="mobile-link text-2xl font-serif text-gray-800 hover:text-pink-600 transition-colors">Contact</a>
+            <a href="#contact" class="btn-primary text-white px-8 py-3 rounded-xl font-semibold mt-4 inline-flex items-center gap-2">
+                <span>Let's Talk</span>
+                <iconify-icon icon="lucide:arrow-right" width="18"></iconify-icon>
+            </a>
+        </div>
+    </div>
+
+    <!-- ==================== HERO ==================== -->
+    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden pt-20">
+        <div class="absolute inset-0">
+            <div class="absolute top-20 right-10 w-[500px] h-[500px] bg-pink-200/30 rounded-full blur-[120px] animate-pulse-soft"></div>
+            <div class="absolute bottom-20 left-10 w-[400px] h-[400px] bg-pink-300/20 rounded-full blur-[100px] animate-pulse-soft" style="animation-delay:1s"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-beige-200/40 rounded-full blur-[120px]"></div>
+        </div>
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute w-3 h-3 bg-pink-300/40 top-[20%] left-[10%] animate-float rounded-full"></div>
+            <div class="absolute w-2 h-2 bg-pink-400/30 top-[60%] left-[80%] animate-float-reverse rounded-full" style="animation-delay:2s"></div>
+            <div class="absolute w-4 h-4 bg-pink-200/50 top-[30%] right-[15%] animate-float rounded-full" style="animation-delay:1s"></div>
+            <div class="absolute w-2 h-2 bg-beige-300/60 top-[70%] left-[25%] animate-float-reverse rounded-full" style="animation-delay:3s"></div>
+            <div class="absolute w-3 h-3 bg-pink-300/30 top-[80%] right-[30%] animate-float rounded-full" style="animation-delay:.5s"></div>
+        </div>
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image:radial-gradient(#EC4899 1px,transparent 1px);background-size:40px 40px"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Left -->
+                <div class="order-2 lg:order-1">
+                    <div class="inline-flex items-center gap-2 glass-pink rounded-full px-4 py-2 mb-6" style="animation:slide-up .8s ease-out forwards">
+                        <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
+                        <span class="text-sm font-medium text-pink-700">Available for Freelance</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900 leading-[1.1] mb-6" style="animation:slide-up .8s ease-out .1s both">
+                        Frontend Web Designer<br>
+                        <span class="gradient-text-animated">Creating Modern</span><br>
+                        <span class="text-gray-500">Digital</span> <span class="gradient-text">Experiences</span>
+                    </h1>
+                    <p class="text-lg text-gray-500 leading-relaxed max-w-xl mb-8" style="animation:slide-up .8s ease-out .2s both">
+                        I design and develop responsive, aesthetic, and user-friendly websites for modern brands and businesses.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-10" style="animation:slide-up .8s ease-out .3s both">
+                        <a href="#contact" class="btn-primary text-white px-8 py-4 rounded-2xl font-semibold inline-flex items-center gap-3 text-base">
+                            <span>Hire Me</span>
+                            <iconify-icon icon="lucide:arrow-up-right" width="20"></iconify-icon>
+                        </a>
+                        <a href="#projects" class="btn-outline px-8 py-4 rounded-2xl font-semibold inline-flex items-center gap-3 text-gray-700 text-base">
+                            View Portfolio
+                            <iconify-icon icon="lucide:folder-open" width="20"></iconify-icon>
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap gap-8" style="animation:slide-up .8s ease-out .4s both">
+                        <div>
+                            <div class="text-3xl font-bold gradient-text" id="stat-projects">0</div>
+                            <div class="text-sm text-gray-400 font-medium mt-1">Projects Completed</div>
+                        </div>
+                        <div class="w-px bg-pink-200"></div>
+                        <div>
+                            <div class="text-3xl font-bold gradient-text" id="stat-clients">0</div>
+                            <div class="text-sm text-gray-400 font-medium mt-1">Happy Clients</div>
+                        </div>
+                        <div class="w-px bg-pink-200"></div>
+                        <div>
+                            <div class="text-3xl font-bold gradient-text" id="stat-pages">0</div>
+                            <div class="text-sm text-gray-400 font-medium mt-1">Pages Designed</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="order-1 lg:order-2 flex justify-center" style="animation:scale-in 1s ease-out .2s both">
+                    <div class="relative">
+                        <div class="absolute -inset-8 rounded-full border-2 border-dashed border-pink-200/50 animate-spin-slow"></div>
+                        <div class="absolute -inset-16 rounded-full border border-pink-100/30 animate-spin-slow" style="animation-direction:reverse;animation-duration:30s"></div>
+                        <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl shadow-pink-200/50">
+                            <img src="profile.png" alt="Hoorain Manzoor Hussain" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-pink-600/20 to-transparent"></div>
+                        </div>
+                        <!-- Floating cards -->
+                        <div class="absolute -right-4 top-8 glass rounded-2xl p-3 shadow-xl animate-float">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center">
+                                    <iconify-icon icon="lucide:palette" width="16" class="text-white"></iconify-icon>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-bold text-gray-800">UI/UX</div>
+                                    <div class="text-[10px] text-gray-400">Designer</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -left-4 bottom-16 glass rounded-2xl p-3 shadow-xl animate-float-reverse">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                                    <iconify-icon icon="lucide:check-circle" width="16" class="text-white"></iconify-icon>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-bold text-gray-800">100%</div>
+                                    <div class="text-[10px] text-gray-400">Responsive</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute right-8 -bottom-2 glass rounded-2xl p-3 shadow-xl animate-float" style="animation-delay:1.5s">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                                    <iconify-icon icon="lucide:code-2" width="16" class="text-white"></iconify-icon>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-bold text-gray-800">Frontend</div>
+                                    <div class="text-[10px] text-gray-400">Developer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+            <span class="text-xs text-gray-400 font-medium tracking-wider uppercase">Scroll</span>
+            <iconify-icon icon="lucide:chevron-down" width="20" class="text-pink-400"></iconify-icon>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about" class="relative py-24 lg:py-32 overflow-hidden">
+        <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-pink-100/40 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-beige-200/50 rounded-full blur-[100px]"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal-left">
+                    <div class="relative">
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-pink-200/30">
+                            <img src="about.png" alt="About Hoorain" class="w-full h-[500px] object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-pink-900/40 via-transparent to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 glass rounded-2xl p-6 shadow-xl">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold gradient-text">2+</div>
+                                <div class="text-sm text-gray-500 font-medium">Years of<br>Experience</div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-6 -left-6 grid grid-cols-4 gap-2 opacity-30">
+                            <div class="w-2 h-2 bg-pink-400 rounded-full"></div><div class="w-2 h-2 bg-pink-400 rounded-full"></div><div class="w-2 h-2 bg-pink-400 rounded-full"></div><div class="w-2 h-2 bg-pink-400 rounded-full"></div>
+                            <div class="w-2 h-2 bg-pink-400 rounded-full"></div><div class="w-2 h-2 bg-pink-400 rounded-full"></div><div class="w-2 h-2 bg-pink-400 rounded-full"></div><div class="w-2 h-2 bg-pink-400 rounded-full"></div>
+                            <div class="w-2 h-2 bg-pink-400 rounded-full"></div><div class="w-2 h-2 bg-pink-400 rounded-full"></div><div class="w-2 h-2 bg-pink-400 rounded-full"></div><div class="w-2 h-2 bg-pink-400 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-right">
+                    <div class="inline-flex items-center gap-2 bg-pink-50 rounded-full px-4 py-2 mb-6">
+                        <iconify-icon icon="lucide:user" width="16" class="text-pink-500"></iconify-icon>
+                        <span class="text-sm font-semibold text-pink-600 tracking-wide uppercase">About Me</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-900 mb-6 leading-tight">
+                        Passionate About Creating <span class="gradient-text">Digital Experiences</span>
+                    </h2>
+                    <p class="text-gray-500 leading-relaxed mb-6 text-lg">
+                        I'm <strong class="text-gray-800">Hoorain Manzoor Hussain</strong>, a Frontend Web Designer & Developer based in <strong class="text-gray-800">Karachi, Pakistan</strong>. As a Software Engineering student at Aptech, I combine creative design with technical expertise to deliver exceptional web solutions.
+                    </p>
+                    <p class="text-gray-500 leading-relaxed mb-8">
+                        My passion lies in crafting clean, modern UI/UX designs and responsive websites that not only look stunning but also provide intuitive user experiences. I'm focused on building interfaces that are both beautiful and functional.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="glass-pink rounded-2xl p-4">
+                            <iconify-icon icon="lucide:monitor" width="24" class="text-pink-500 mb-2"></iconify-icon>
+                            <div class="text-sm font-semibold text-gray-800">Web Design</div>
+                            <div class="text-xs text-gray-400 mt-1">Modern & Clean</div>
+                        </div>
+                        <div class="glass-pink rounded-2xl p-4">
+                            <iconify-icon icon="lucide:smartphone" width="24" class="text-pink-500 mb-2"></iconify-icon>
+                            <div class="text-sm font-semibold text-gray-800">Responsive</div>
+                            <div class="text-xs text-gray-400 mt-1">All Devices</div>
+                        </div>
+                        <div class="glass-pink rounded-2xl p-4">
+                            <iconify-icon icon="lucide:palette" width="24" class="text-pink-500 mb-2"></iconify-icon>
+                            <div class="text-sm font-semibold text-gray-800">UI/UX Design</div>
+                            <div class="text-xs text-gray-400 mt-1">User-Focused</div>
+                        </div>
+                        <div class="glass-pink rounded-2xl p-4">
+                            <iconify-icon icon="lucide:zap" width="24" class="text-pink-500 mb-2"></iconify-icon>
+                            <div class="text-sm font-semibold text-gray-800">Fast Delivery</div>
+                            <div class="text-xs text-gray-400 mt-1">On Time</div>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn-primary text-white px-8 py-4 rounded-2xl font-semibold inline-flex items-center gap-3">
+                        <span>Get In Touch</span>
+                        <iconify-icon icon="lucide:arrow-right" width="18"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SKILLS ==================== -->
+    <section id="skills" class="relative py-24 lg:py-32 bg-gradient-to-b from-beige-50 via-pink-50/30 to-beige-50 overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.02]" style="background-image:radial-gradient(#EC4899 1px,transparent 1px);background-size:30px 30px"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="inline-flex items-center gap-2 bg-pink-50 rounded-full px-4 py-2 mb-6">
+                    <iconify-icon icon="lucide:zap" width="16" class="text-pink-500"></iconify-icon>
+                    <span class="text-sm font-semibold text-pink-600 tracking-wide uppercase">My Skills</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-900 mb-4">
+                    Skills & <span class="gradient-text">Expertise</span>
+                </h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg">A curated skill set refined through real-world projects and continuous learning.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Core Development -->
+                <div class="reveal card-hover">
+                    <div class="glass rounded-3xl p-8 h-full border border-pink-100/50">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center mb-6 shadow-lg shadow-pink-200/50">
+                            <iconify-icon icon="lucide:code-2" width="28" class="text-white"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-gray-900 mb-6">Core Development</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1.5"><span class="text-sm font-medium text-gray-700">HTML5</span><span class="text-sm font-semibold text-pink-600">95%</span></div>
+                                <div class="h-2 bg-pink-100 rounded-full overflow-hidden"><div class="skill-bar h-full bg-gradient-to-r from-pink-400 to-pink-600 rounded-full" style="--skill-width:95%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1.5"><span class="text-sm font-medium text-gray-700">CSS3</span><span class="text-sm font-semibold text-pink-600">92%</span></div>
+                                <div class="h-2 bg-pink-100 rounded-full overflow-hidden"><div class="skill-bar h-full bg-gradient-to-r from-pink-400 to-pink-600 rounded-full" style="--skill-width:92%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1.5"><span class="text-sm font-medium text-gray-700">JavaScript</span><span class="text-sm font-semibold text-pink-600">85%</span></div>
+                                <div class="h-2 bg-pink-100 rounded-full overflow-hidden"><div class="skill-bar h-full bg-gradient-to-r from-pink-400 to-pink-600 rounded-full" style="--skill-width:85%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1.5"><span class="text-sm font-medium text-gray-700">Bootstrap</span><span class="text-sm font-semibold text-pink-600">88%</span></div>
+                                <div class="h-2 bg-pink-100 rounded-full overflow-hidden"><div class="skill-bar h-full bg-gradient-to-r from-pink-400 to-pink-600 rounded-full" style="--skill-width:88%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design & UX -->
+                <div class="reveal card-hover" style="transition-delay:.1s">
+                    <div class="glass rounded-3xl p-8 h-full border border-purple-100/50">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center mb-6 shadow-lg shadow-purple-200/50">
+                            <iconify-icon icon="lucide:palette" width="28" class="text-white"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-gray-900 mb-6">Design & UX</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1.5"><span class="text-sm font-medium text-gray-700">Responsive Design</span><span class="text-sm font-semibold text-purple-600">94%</span></div>
+                                <div class="h-2 bg-purple-100 rounded-full overflow-hidden"><div class="skill-bar h-full bg-gradient-to-r from-purple-400 to-purple-600 rounded-full" style="--skill-width:94%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1.5"><span class="text-sm font-medium text-gray-700">UI/UX Design</span><span class="text-sm font-semibold text-purple-600">82%</span></div>
+                                <div class="h-2 bg-purple-100 rounded-full overflow-hidden"><div class="skill-bar h-full bg-gradient-to-r from-purple-400 to-purple-600 rounded-full" style="--skill-width:82%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1.5"><span class="text-sm font-medium text-gray-700">Figma</span><span class="text-sm font-semibold text-purple-600">78%</span></div>
+                                <div class="h-2 bg-purple-100 rounded-full overflow-hidden"><div class="skill-bar h-full bg-gradient-to-r from-purple-400 to-purple-600 rounded-full" style="--skill-width:78%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Workflow -->
+                <div class="reveal card-hover" style="transition-delay:.2s">
+                    <div class="glass rounded-3xl p-8 h-full border border-amber-100/50">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center mb-6 shadow-lg shadow-amber-200/50">
+                            <iconify-icon icon="lucide:wrench" width="28" class="text-white"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-gray-900 mb-6">Tools & Workflow</h3>
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="px-4 py-2 rounded-xl bg-amber-50 text-amber-700 text-sm font-semibold border border-amber-200/50 flex items-center gap-2">
+                                <iconify-icon icon="lucide:github" width="16"></iconify-icon> GitHub
+                            </span>
+                            <span class="px-4 py-2 rounded-xl bg-amber-50 text-amber-700 text-sm font-semibold border border-amber-200/50 flex items-center gap-2">
+                                <iconify-icon icon="lucide:terminal" width="16"></iconify-icon> VS Code
+                            </span>
+                            <span class="px-4 py-2 rounded-xl bg-amber-50 text-amber-700 text-sm font-semibold border border-amber-200/50 flex items-center gap-2">
+                                <iconify-icon icon="lucide:figma" width="16"></iconify-icon> Figma
+                            </span>
+                        </div>
+
+                        <div class="pt-6 border-t border-amber-100/50">
+                            <h4 class="text-sm font-bold text-gray-700 mb-4 uppercase tracking-wider">What I Bring</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-pink-100 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="12" class="text-pink-600"></iconify-icon></div>
+                                    <span class="text-sm text-gray-600">Pixel-Perfect Implementation</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-pink-100 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="12" class="text-pink-600"></iconify-icon></div>
+                                    <span class="text-sm text-gray-600">Mobile-First Approach</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-pink-100 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="12" class="text-pink-600"></iconify-icon></div>
+                                    <span class="text-sm text-gray-600">Clean & Maintainable Code</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-pink-100 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="12" class="text-pink-600"></iconify-icon></div>
+                                    <span class="text-sm text-gray-600">Fast & Clear Communication</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICES ==================== -->
+    <section id="services" class="relative py-24 lg:py-32 overflow-hidden">
+        <div class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-pink-100/30 rounded-full blur-[150px]"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="inline-flex items-center gap-2 bg-pink-50 rounded-full px-4 py-2 mb-6">
+                    <iconify-icon icon="lucide:briefcase" width="16" class="text-pink-500"></iconify-icon>
+                    <span class="text-sm font-semibold text-pink-600 tracking-wide uppercase">Services</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-900 mb-4">What I <span class="gradient-text">Offer</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg">Professional web design and development services tailored to elevate your digital presence.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="reveal card-hover group">
+                    <div class="glass rounded-3xl p-8 border border-pink-100/50 h-full relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-pink-100/50 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-pink-200/50">
+                            <iconify-icon icon="lucide:layout" width="28" class="text-white"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-gray-900 mb-3">Landing Page Design</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">High-converting landing pages that capture attention and drive action. Beautiful, fast, and results-focused.</p>
+                        <div class="flex items-center gap-2 text-pink-600 text-sm font-semibold group-hover:gap-3 transition-all duration-300">Learn More <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon></div>
+                    </div>
+                </div>
+                <div class="reveal card-hover group" style="transition-delay:.05s">
+                    <div class="glass rounded-3xl p-8 border border-blue-100/50 h-full relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100/50 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-blue-200/50">
+                            <iconify-icon icon="lucide:smartphone" width="28" class="text-white"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-gray-900 mb-3">Responsive Website Design</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Websites that look flawless on every device — mobile, tablet, and desktop. Responsive by default.</p>
+                        <div class="flex items-center gap-2 text-blue-600 text-sm font-semibold group-hover:gap-3 transition-all duration-300">Learn More <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon></div>
+                    </div>
+                </div>
+                <div class="reveal card-hover group" style="transition-delay:.1s">
+                    <div class="glass rounded-3xl p-8 border border-purple-100/50 h-full relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100/50 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-purple-200/50">
+                            <iconify-icon icon="lucide:code-2" width="28" class="text-white"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-gray-900 mb-3">Frontend Development</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Modern, interactive web applications built with clean code and the latest web technologies for optimal UX.</p>
+                        <div class="flex items-center gap-2 text-purple-600 text-sm font-semibold group-hover:gap-3 transition-all duration-300">Learn More <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon></div>
+                    </div>
+                </div>
+                <div class="reveal card-hover group" style="transition-delay:.15s">
+                    <div class="glass rounded-3xl p-8 border border-rose-100/50 h-full relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-rose-100/50 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-400 to-rose-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-rose-200/50">
+                            <iconify-icon icon="lucide:palette" width="28" class="text-white"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-gray-900 mb-3">UI/UX Design</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">User-centered designs that balance beauty with functionality, creating intuitive and delightful experiences.</p>
+                        <div class="flex items-center gap-2 text-rose-600 text-sm font-semibold group-hover:gap-3 transition-all duration-300">Learn More <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon></div>
+                    </div>
+                </div>
+                <div class="reveal card-hover group" style="transition-delay:.2s">
+                    <div class="glass rounded-3xl p-8 border border-amber-100/50 h-full relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-100/50 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-amber-200/50">
+                            <iconify-icon icon="lucide:user" width="28" class="text-white"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-gray-900 mb-3">Portfolio Websites</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Stunning personal portfolio websites that showcase your work and help you stand out in your industry.</p>
+                        <div class="flex items-center gap-2 text-amber-600 text-sm font-semibold group-hover:gap-3 transition-all duration-300">Learn More <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon></div>
+                    </div>
+                </div>
+                <div class="reveal card-hover group" style="transition-delay:.25s">
+                    <div class="glass rounded-3xl p-8 border border-indigo-100/50 h-full relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-100/50 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-indigo-200/50">
+                            <iconify-icon icon="lucide:refresh-cw" width="28" class="text-white"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-gray-900 mb-3">Website Redesign</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Transform your outdated website into a modern, high-performing digital experience that impresses visitors.</p>
+                        <div class="flex items-center gap-2 text-indigo-600 text-sm font-semibold group-hover:gap-3 transition-all duration-300">Learn More <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROJECTS ==================== -->
+    <section id="projects" class="relative py-24 lg:py-32 bg-gradient-to-b from-beige-50 via-pink-50/20 to-beige-50 overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-pink-100/30 rounded-full blur-[150px]"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="inline-flex items-center gap-2 bg-pink-50 rounded-full px-4 py-2 mb-6">
+                    <iconify-icon icon="lucide:folder-open" width="16" class="text-pink-500"></iconify-icon>
+                    <span class="text-sm font-semibold text-pink-600 tracking-wide uppercase">Projects</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-900 mb-4">Featured <span class="gradient-text">Work</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg">Real-world frontend projects showcasing my design sensibility, responsive coding skills, and attention to detail.</p>
+            </div>
+
+            <div class="space-y-8">
+
+                <!-- ================================================================== -->
+                <!-- PROJECT 1: Landing Page                                           -->
+                <!-- 🔴 REPLACE the href below with YOUR GitHub Pages live link        -->
+                <!-- Example: https://yourusername.github.io/landing-page/             -->
+                <!-- ================================================================== -->
+                <div class="reveal project-card card-hover group">
+                    <div class="glass rounded-3xl overflow-hidden border border-pink-100/50">
+                        <div class="grid md:grid-cols-2">
+                            <!-- Image Side -->
+                            <div class="relative overflow-hidden h-72 md:h-full min-h-[360px]">
+                                <img src="landing.png" alt="Modern Landing Page" class="w-full h-full object-cover project-card-img">
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/20 md:to-beige-50/30"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-pink-900/30 to-transparent md:bg-gradient-to-r md:from-transparent md:to-transparent"></div>
+                                <!-- Hover overlay — LIVE PREVIEW BUTTON -->
+                                <div class="project-overlay absolute inset-0 bg-pink-600/20 flex items-center justify-center">
+                                    <a href="https://hoor699.github.io/landing_page/" target="_blank" rel="noopener noreferrer" class="bg-white text-pink-600 px-6 py-3 rounded-xl font-semibold text-sm inline-flex items-center gap-2 shadow-xl hover:scale-105 transition-transform duration-300">
+                                        <iconify-icon icon="lucide:external-link" width="16"></iconify-icon> Live Preview
+                                    </a>
+                                </div>
+                                <div class="absolute top-4 left-4"><span class="px-3 py-1 rounded-full bg-pink-500/90 backdrop-blur-sm text-white text-xs font-bold tracking-wide">LANDING PAGE</span></div>
+                            </div>
+                            <!-- Content Side -->
+                            <div class="p-8 md:p-10 flex flex-col justify-center">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center shadow-lg shadow-pink-200/40">
+                                        <iconify-icon icon="lucide:layout" width="20" class="text-white"></iconify-icon>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-serif font-bold text-gray-900">Modern Landing Page</h3>
+                                        <p class="text-xs text-pink-500 font-semibold">Single Page — High Conversion</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-500 leading-relaxed mb-6">A sleek, high-converting landing page built with a clean layout, bold hero section, smooth scroll animations, and strategically placed CTAs. Designed to capture leads and drive user action with a visually compelling first impression.</p>
+                                
+                                <div class="mb-6">
+                                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Key Features</h4>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                                            <div class="w-5 h-5 rounded-full bg-pink-100 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="12" class="text-pink-600"></iconify-icon></div>
+                                            Hero with CTA
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                                            <div class="w-5 h-5 rounded-full bg-pink-100 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="12" class="text-pink-600"></iconify-icon></div>
+                                            Smooth Animations
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                                            <div class="w-5 h-5 rounded-full bg-pink-100 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="12" class="text-pink-600"></iconify-icon></div>
+                                            Fully Responsive
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                                            <div class="w-5 h-5 rounded-full bg-pink-100 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="12" class="text-pink-600"></iconify-icon></div>
+                                            Modern UI Design
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1.5 rounded-lg bg-pink-50 text-pink-700 text-xs font-semibold border border-pink-200/50">HTML5</span>
+                                    <span class="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-200/50">CSS3</span>
+                                    <span class="px-3 py-1.5 rounded-lg bg-amber-50 text-amber-700 text-xs font-semibold border border-amber-200/50">JavaScript</span>
+                                    <span class="px-3 py-1.5 rounded-lg bg-green-50 text-green-700 text-xs font-semibold border border-green-200/50">Responsive</span>
+                                </div>
+
+                                <!-- VIEW PROJECT BUTTON — same GitHub Pages link -->
+                                <a href="https://hoor699.github.io/landing_page/" target="_blank" rel="noopener noreferrer" class="btn-primary text-white px-6 py-2.5 rounded-xl text-sm font-semibold inline-flex items-center gap-2 w-fit">
+                                    <span>View Project</span>
+                                    <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================================================================== -->
+                <!-- PROJECT 2: Pizza Website (4 Pages)                                -->
+                <!-- 🔴 REPLACE the href below with YOUR GitHub Pages live link        -->
+                <!-- Example: https://yourusername.github.io/pizza-website/            -->
+                <!-- ================================================================== -->
+                <div class="reveal project-card card-hover group" style="transition-delay:.1s">
+                    <div class="glass rounded-3xl overflow-hidden border border-amber-100/50">
+                        <div class="grid md:grid-cols-2">
+                            <!-- Content Side (left on desktop) -->
+                            <div class="p-8 md:p-10 flex flex-col justify-center order-2 md:order-1">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-red-500 flex items-center justify-center shadow-lg shadow-amber-200/40">
+                                        <iconify-icon icon="lucide:pizza" width="20" class="text-white"></iconify-icon>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-serif font-bold text-gray-900">Pizza Restaurant Website</h3>
+                                        <p class="text-xs text-amber-500 font-semibold">4 Pages — Complete Website</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-500 leading-relaxed mb-6">A mouth-watering multi-page pizza restaurant website featuring a vibrant home page, interactive menu with food categories, an about story section, and a contact/reservation page. Built with appetizing visuals and intuitive navigation.</p>
+                                
+                                <!-- 4 Page Badges -->
+                                <div class="mb-6">
+                                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">4 Pages Included</h4>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <div class="flex items-center gap-2 text-sm text-gray-600 page-badge">
+                                            <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:home" width="14" class="text-amber-600"></iconify-icon></div>
+                                            <span class="font-medium">Home</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-gray-600 page-badge" style="animation-delay:.2s">
+                                            <div class="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:utensils" width="14" class="text-red-600"></iconify-icon></div>
+                                            <span class="font-medium">Menu</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-gray-600 page-badge" style="animation-delay:.4s">
+                                            <div class="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:info" width="14" class="text-orange-600"></iconify-icon></div>
+                                            <span class="font-medium">About</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-gray-600 page-badge" style="animation-delay:.6s">
+                                            <div class="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:phone" width="14" class="text-green-600"></iconify-icon></div>
+                                            <span class="font-medium">Contact</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1.5 rounded-lg bg-amber-50 text-amber-700 text-xs font-semibold border border-amber-200/50">HTML5</span>
+                                    <span class="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-200/50">CSS3</span>
+                                    <span class="px-3 py-1.5 rounded-lg bg-purple-50 text-purple-700 text-xs font-semibold border border-purple-200/50">Bootstrap</span>
+                                    <span class="px-3 py-1.5 rounded-lg bg-green-50 text-green-700 text-xs font-semibold border border-green-200/50">Responsive</span>
+                                    <span class="px-3 py-1.5 rounded-lg bg-pink-50 text-pink-700 text-xs font-semibold border border-pink-200/50">JavaScript</span>
+                                </div>
+
+                                <!-- VIEW PROJECT BUTTON — GitHub Pages link -->
+                                <a href="  https://hoor699.github.io/pizza_website/" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-amber-500 to-red-500 text-white px-6 py-2.5 rounded-xl text-sm font-semibold inline-flex items-center gap-2 w-fit hover:shadow-lg hover:shadow-amber-200/50 hover:-translate-y-0.5 transition-all duration-300">
+                                    <span>View Project</span>
+                                    <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                                </a>
+                            </div>
+                            <!-- Image Side (right on desktop) -->
+                            <div class="relative overflow-hidden h-72 md:h-full min-h-[360px] order-1 md:order-2">
+                                <img src="pizza.png" alt="Pizza Restaurant Website" class="w-full h-full object-cover project-card-img">
+                                <div class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/20 md:to-beige-50/30"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-amber-900/30 to-transparent md:bg-gradient-to-l md:from-transparent md:to-transparent"></div>
+                                <!-- Hover overlay — LIVE PREVIEW BUTTON -->
+                                <div class="project-overlay absolute inset-0 bg-amber-600/20 flex items-center justify-center">
+                                    <a href=" https://hoor699.github.io/pizza_website/" target="_blank" rel="noopener noreferrer" class="bg-white text-amber-600 px-6 py-3 rounded-xl font-semibold text-sm inline-flex items-center gap-2 shadow-xl hover:scale-105 transition-transform duration-300">
+                                        <iconify-icon icon="lucide:external-link" width="16"></iconify-icon> Live Preview
+                                    </a>
+                                </div>
+                                <div class="absolute top-4 right-4"><span class="px-3 py-1 rounded-full bg-amber-500/90 backdrop-blur-sm text-white text-xs font-bold tracking-wide">4 PAGES</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================================================================== -->
+                <!-- PROJECT 3: Inavon Global E-Commerce                               -->
+                <!-- 🔴 REPLACE the href below with YOUR GitHub Pages live link        -->
+                <!-- Example: https://yourusername.github.io/inavon-global/            -->
+                <!-- ================================================================== -->
+                <div class="reveal project-card card-hover group" style="transition-delay:.2s">
+                    <div class="glass rounded-3xl overflow-hidden border border-indigo-100/50">
+                        <div class="grid md:grid-cols-2">
+                            <!-- Image Side -->
+                            <div class="relative overflow-hidden h-72 md:h-full min-h-[360px]">
+                                <img src="e-commerce.png" alt="Inavon Global E-Commerce" class="w-full h-full object-cover project-card-img">
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/20 md:to-beige-50/30"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-indigo-900/30 to-transparent md:bg-gradient-to-r md:from-transparent md:to-transparent"></div>
+                                <!-- Hover overlay — LIVE PREVIEW BUTTON -->
+                                <div class="project-overlay absolute inset-0 bg-indigo-600/20 flex items-center justify-center">
+                                    <a href="https://hoor699.github.io/e-coomerce_website/" target="_blank" rel="noopener noreferrer" class="bg-white text-indigo-600 px-6 py-3 rounded-xl font-semibold text-sm inline-flex items-center gap-2 shadow-xl hover:scale-105 transition-transform duration-300">
+                                        <iconify-icon icon="lucide:external-link" width="16"></iconify-icon> Live Preview
+                                    </a>
+                                </div>
+                                <div class="absolute top-4 left-4"><span class="px-3 py-1 rounded-full bg-indigo-500/90 backdrop-blur-sm text-white text-xs font-bold tracking-wide">E-COMMERCE</span></div>
+                            </div>
+                            <!-- Content Side -->
+                            <div class="p-8 md:p-10 flex flex-col justify-center">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-200/40">
+                                        <iconify-icon icon="lucide:shopping-bag" width="20" class="text-white"></iconify-icon>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-serif font-bold text-gray-900">StyleSphere</h3>
+                                        <p class="text-xs text-indigo-500 font-semibold">E-Commerce Website — Full Storefront</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-500 leading-relaxed mb-6">A complete fashion e-commerce website featuring stylish clothing for men, women & kids, along with jewellery and accessories. Browse by category, add to wishlist, filter by size & color, enjoy a smooth shopping cart experience, and checkout effortlessly — all in a beautifully designed, fully responsive storefront.</p>
+                                
+                                <div class="mb-6">
+                                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Key Features</h4>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                                            <div class="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="12" class="text-indigo-600"></iconify-icon></div>
+                                            Product Catalog
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                                            <div class="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="12" class="text-indigo-600"></iconify-icon></div>
+                                            Shopping Cart
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                                            <div class="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="12" class="text-indigo-600"></iconify-icon></div>
+                                            Category Filters
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                                            <div class="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="12" class="text-indigo-600"></iconify-icon></div>
+                                            Checkout Flow
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                                            <div class="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="12" class="text-indigo-600"></iconify-icon></div>
+                                            Responsive Design
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                                            <div class="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="12" class="text-indigo-600"></iconify-icon></div>
+                                            Search Function
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1.5 rounded-lg bg-indigo-50 text-indigo-700 text-xs font-semibold border border-indigo-200/50">HTML5</span>
+                                    <span class="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-200/50">CSS3</span>
+                                    <span class="px-3 py-1.5 rounded-lg bg-amber-50 text-amber-700 text-xs font-semibold border border-amber-200/50">JavaScript</span>
+                                    <span class="px-3 py-1.5 rounded-lg bg-purple-50 text-purple-700 text-xs font-semibold border border-purple-200/50">Bootstrap</span>
+                                    <span class="px-3 py-1.5 rounded-lg bg-green-50 text-green-700 text-xs font-semibold border border-green-200/50">Responsive</span>
+                                </div>
+
+                                <!-- VIEW PROJECT BUTTON — GitHub Pages link -->
+                                <a href="https://hoor699.github.io/e-coomerce_website/" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-indigo-500 to-indigo-700 text-white px-6 py-2.5 rounded-xl text-sm font-semibold inline-flex items-center gap-2 w-fit hover:shadow-lg hover:shadow-indigo-200/50 hover:-translate-y-0.5 transition-all duration-300">
+                                    <span>View Project</span>
+                                    <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Project Summary Bar -->
+            <div class="reveal mt-12">
+                <div class="glass-pink rounded-2xl p-6 md:p-8">
+                    <div class="grid grid-cols-3 gap-6 text-center">
+                        <div>
+                            <div class="text-3xl md:text-4xl font-bold gradient-text">3</div>
+                            <div class="text-sm text-gray-500 font-medium mt-1">Frontend Projects</div>
+                        </div>
+                        <div class="border-x border-pink-200/50">
+                            <div class="text-3xl md:text-4xl font-bold gradient-text">6+</div>
+                            <div class="text-sm text-gray-500 font-medium mt-1">Total Pages</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl md:text-4xl font-bold gradient-text">100%</div>
+                            <div class="text-sm text-gray-500 font-medium mt-1">Responsive</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EXPERIENCE ==================== -->
+    <section id="experience" class="relative py-24 lg:py-32 overflow-hidden">
+        <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-pink-100/30 rounded-full blur-[120px]"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <div class="reveal-left lg:sticky lg:top-32">
+                    <div class="inline-flex items-center gap-2 bg-pink-50 rounded-full px-4 py-2 mb-6">
+                        <iconify-icon icon="lucide:trending-up" width="16" class="text-pink-500"></iconify-icon>
+                        <span class="text-sm font-semibold text-pink-600 tracking-wide uppercase">Experience</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-900 mb-6 leading-tight">My Professional<br><span class="gradient-text">Journey</span></h2>
+                    <p class="text-gray-500 text-lg leading-relaxed mb-8">Every role has shaped my skills and deepened my commitment to building exceptional web experiences.</p>
+                    <div class="glass-pink rounded-2xl p-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center shadow-lg shadow-pink-200/50">
+                                <iconify-icon icon="lucide:briefcase" width="28" class="text-white"></iconify-icon>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold gradient-text">2+</div>
+                                <div class="text-sm text-gray-500">Years of Professional Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-right">
+                    <div class="relative pl-12">
+                        <div class="absolute left-[23px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-pink-300 to-pink-100"></div>
+
+                        <div class="relative mb-12">
+                            <div class="absolute -left-12 w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center shadow-lg shadow-pink-200/50 z-10">
+                                <iconify-icon icon="lucide:code-2" width="22" class="text-white"></iconify-icon>
+                            </div>
+                            <div class="glass rounded-2xl p-6 border border-pink-100/50 card-hover">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="px-3 py-1 rounded-full bg-pink-50 text-pink-600 text-xs font-semibold">Current</span>
+                                    <span class="text-xs text-gray-400">2023 — Present</span>
+                                </div>
+                                <h3 class="text-lg font-serif font-bold text-gray-900 mb-1">Frontend Developer</h3>
+                                <p class="text-pink-600 text-sm font-semibold mb-3">Aptech Learning</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start gap-2 text-sm text-gray-500"><iconify-icon icon="lucide:check" width="16" class="text-pink-500 mt-0.5 flex-shrink-0"></iconify-icon>Developed responsive websites for diverse clients</li>
+                                    <li class="flex items-start gap-2 text-sm text-gray-500"><iconify-icon icon="lucide:check" width="16" class="text-pink-500 mt-0.5 flex-shrink-0"></iconify-icon>Built interactive user interfaces using JavaScript</li>
+                                    <li class="flex items-start gap-2 text-sm text-gray-500"><iconify-icon icon="lucide:check" width="16" class="text-pink-500 mt-0.5 flex-shrink-0"></iconify-icon>Worked on frontend business projects with modern design standards</li>
+                                    <li class="flex items-start gap-2 text-sm text-gray-500"><iconify-icon icon="lucide:check" width="16" class="text-pink-500 mt-0.5 flex-shrink-0"></iconify-icon>Improved user experience through clean, efficient code</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="relative mb-12">
+                            <div class="absolute -left-12 w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center shadow-lg shadow-purple-200/50 z-10">
+                                <iconify-icon icon="lucide:graduation-cap" width="22" class="text-white"></iconify-icon>
+                            </div>
+                            <div class="glass rounded-2xl p-6 border border-purple-100/50 card-hover">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="px-3 py-1 rounded-full bg-purple-50 text-purple-600 text-xs font-semibold">Education</span>
+                                    <span class="text-xs text-gray-400">2022 — Present</span>
+                                </div>
+                                <h3 class="text-lg font-serif font-bold text-gray-900 mb-1">Software Engineering Student</h3>
+                                <p class="text-purple-600 text-sm font-semibold mb-3">Aptech Learning, Karachi</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start gap-2 text-sm text-gray-500"><iconify-icon icon="lucide:check" width="16" class="text-purple-500 mt-0.5 flex-shrink-0"></iconify-icon>Comprehensive software engineering curriculum</li>
+                                    <li class="flex items-start gap-2 text-sm text-gray-500"><iconify-icon icon="lucide:check" width="16" class="text-purple-500 mt-0.5 flex-shrink-0"></iconify-icon>Specialized in web design & frontend development</li>
+                                    <li class="flex items-start gap-2 text-sm text-gray-500"><iconify-icon icon="lucide:check" width="16" class="text-purple-500 mt-0.5 flex-shrink-0"></iconify-icon>Hands-on project experience with real-world applications</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="absolute -left-12 w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-200/50 z-10">
+                                <iconify-icon icon="lucide:rocket" width="22" class="text-white"></iconify-icon>
+                            </div>
+                            <div class="glass rounded-2xl p-6 border border-amber-100/50 card-hover">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="px-3 py-1 rounded-full bg-amber-50 text-amber-600 text-xs font-semibold">Freelance</span>
+                                    <span class="text-xs text-gray-400">Ongoing</span>
+                                </div>
+                                <h3 class="text-lg font-serif font-bold text-gray-900 mb-1">Freelance Web Designer</h3>
+                                <p class="text-amber-600 text-sm font-semibold mb-3">Independent</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start gap-2 text-sm text-gray-500"><iconify-icon icon="lucide:check" width="16" class="text-amber-500 mt-0.5 flex-shrink-0"></iconify-icon>Building custom websites for startups and businesses</li>
+                                    <li class="flex items-start gap-2 text-sm text-gray-500"><iconify-icon icon="lucide:check" width="16" class="text-amber-500 mt-0.5 flex-shrink-0"></iconify-icon>Delivering end-to-end design and development solutions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section id="testimonials" class="relative py-24 lg:py-32 bg-gradient-to-b from-pink-50/50 via-beige-50 to-pink-50/30 overflow-hidden">
+        <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-pink-200/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 right-0 w-[300px] h-[300px] bg-purple-200/20 rounded-full blur-[100px]"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="inline-flex items-center gap-2 bg-pink-50 rounded-full px-4 py-2 mb-6">
+                    <iconify-icon icon="lucide:message-circle" width="16" class="text-pink-500"></iconify-icon>
+                    <span class="text-sm font-semibold text-pink-600 tracking-wide uppercase">Testimonials</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-900 mb-4">What Clients <span class="gradient-text">Say</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg">Feedback from clients and collaborators who've experienced the quality of my work.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="reveal card-hover">
+                    <div class="glass-pink rounded-3xl p-8 h-full border border-pink-100/50">
+                        <iconify-icon icon="lucide:quote" width="40" class="text-pink-200 mb-4"></iconify-icon>
+                        <p class="text-gray-600 leading-relaxed mb-6 text-sm">"Hoorain delivered an exceptional website for our business. Her attention to detail and understanding of modern design trends transformed our online presence completely. Highly recommended!"</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center text-white font-bold text-sm">A</div>
+                            <div>
+                                <div class="text-sm font-semibold text-gray-800">Ahmed Khan</div>
+                                <div class="text-xs text-gray-400">CEO, TechStartup PK</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-1 mt-4">
+                            <iconify-icon icon="lucide:star" width="16" class="text-amber-400"></iconify-icon>
+                            <iconify-icon icon="lucide:star" width="16" class="text-amber-400"></iconify-icon>
+                            <iconify-icon icon="lucide:star" width="16" class="text-amber-400"></iconify-icon>
+                            <iconify-icon icon="lucide:star" width="16" class="text-amber-400"></iconify-icon>
+                            <iconify-icon icon="lucide:star" width="16" class="text-amber-400"></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal card-hover" style="transition-delay:.1s">
+                    <div class="glass-pink rounded-3xl p-8 h-full border border-purple-100/50">
+                        <iconify-icon icon="lucide:quote" width="40" class="text-purple-200 mb-4"></iconify-icon>
+                        <p class="text-gray-600 leading-relaxed mb-6 text-sm">"Working with Hoorain was a pleasure. She understood our vision perfectly and created a responsive, beautiful website ahead of schedule. Her design skills are truly impressive."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white font-bold text-sm">S</div>
+                            <div>
+                                <div class="text-sm font-semibold text-gray-800">Sara Malik</div>
+                                <div class="text-xs text-gray-400">Founder, DesignHub</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-1 mt-4">
+                            <iconify-icon icon="lucide:star" width="16" class="text-amber-400"></iconify-icon>
+                            <iconify-icon icon="lucide:star" width="16" class="text-amber-400"></iconify-icon>
+                            <iconify-icon icon="lucide:star" width="16" class="text-amber-400"></iconify-icon>
+                            <iconify-icon icon="lucide:star" width="16" class="text-amber-400"></iconify-icon>
+                            <iconify-icon icon="lucide:star" width="16" class="text-amber-400"></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal card-hover" style="transition-delay:.2s">
+                    <div class="glass-pink rounded-3xl p-8 h-full border border-rose-100/50">
+                        <iconify-icon icon="lucide:quote" width="40" class="text-rose-200 mb-4"></iconify-icon>
+                        <p class="text-gray-600 leading-relaxed mb-6 text-sm">"The landing page Hoorain designed for us increased our conversion rate by 40%. She's not just a designer — she understands how design impacts business. Absolutely worth every penny."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-rose-400 to-rose-600 flex items-center justify-center text-white font-bold text-sm">R</div>
+                            <div>
+                                <div class="text-sm font-semibold text-gray-800">Raza Sheikh</div>
+                                <div class="text-xs text-gray-400">Marketing Director, GrowthCo</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-1 mt-4">
+                            <iconify-icon icon="lucide:star" width="16" class="text-amber-400"></iconify-icon>
+                            <iconify-icon icon="lucide:star" width="16" class="text-amber-400"></iconify-icon>
+                            <iconify-icon icon="lucide:star" width="16" class="text-amber-400"></iconify-icon>
+                            <iconify-icon icon="lucide:star" width="16" class="text-amber-400"></iconify-icon>
+                            <iconify-icon icon="lucide:star" width="16" class="text-amber-400"></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact" class="relative py-24 lg:py-32 overflow-hidden">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-pink-100/30 rounded-full blur-[150px]"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-beige-200/50 rounded-full blur-[120px]"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="inline-flex items-center gap-2 bg-pink-50 rounded-full px-4 py-2 mb-6">
+                    <iconify-icon icon="lucide:mail" width="16" class="text-pink-500"></iconify-icon>
+                    <span class="text-sm font-semibold text-pink-600 tracking-wide uppercase">Contact</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-900 mb-4">Let's Work <span class="gradient-text">Together</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg">Have a project in mind? I'd love to hear about it. Let's create something extraordinary together.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-5 gap-8">
+                <div class="lg:col-span-2 reveal-left">
+                    <div class="space-y-6">
+                        <div class="glass rounded-2xl p-6 border border-pink-100/50 card-hover">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center shadow-lg shadow-pink-200/30">
+                                    <iconify-icon icon="lucide:mail" width="22" class="text-white"></iconify-icon>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-gray-400 font-medium uppercase tracking-wider">Email</div>
+                                    <div class="text-sm font-semibold text-gray-800">hooriyamanzoorhusssain@gmail.com</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass rounded-2xl p-6 border border-pink-100/50 card-hover">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center shadow-lg shadow-purple-200/30">
+                                    <iconify-icon icon="lucide:map-pin" width="22" class="text-white"></iconify-icon>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-gray-400 font-medium uppercase tracking-wider">Location</div>
+                                    <div class="text-sm font-semibold text-gray-800">Karachi, Pakistan</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass rounded-2xl p-6 border border-pink-100/50 card-hover">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center shadow-lg shadow-green-200/30">
+                                    <iconify-icon icon="lucide:clock" width="22" class="text-white"></iconify-icon>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-gray-400 font-medium uppercase tracking-wider">Availability</div>
+                                    <div class="text-sm font-semibold text-gray-800">Open for Projects</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass rounded-2xl p-6 border border-pink-100/50">
+                            <div class="text-xs text-gray-400 font-medium uppercase tracking-wider mb-4">Connect</div>
+                            <div class="flex gap-3">
+                                <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-200/30">
+                                    <iconify-icon icon="lucide:linkedin" width="20"></iconify-icon>
+                                </a>
+                                <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 shadow-lg shadow-gray-200/30">
+                                    <iconify-icon icon="lucide:github" width="20"></iconify-icon>
+                                </a>
+                                <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 shadow-lg shadow-pink-200/30">
+                                    <iconify-icon icon="lucide:instagram" width="20"></iconify-icon>
+                                </a>
+                                <a href="mailto:hooriyamanzoorhusssain@gmail.com" class="w-11 h-11 rounded-xl bg-gradient-to-br from-rose-400 to-rose-600 flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 shadow-lg shadow-rose-200/30">
+                                    <iconify-icon icon="lucide:mail" width="20"></iconify-icon>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3 reveal-right">
+                    <form id="contact-form" class="glass rounded-3xl p-8 lg:p-10 border border-pink-100/50">
+                        <div class="grid md:grid-cols-2 gap-5 mb-5">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                                <input type="text" name="name" placeholder="John Doe" required class="w-full px-4 py-3 rounded-xl bg-white/60 border border-pink-100/50 text-gray-800 placeholder:text-gray-300 text-sm transition-all duration-300">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                                <input type="email" name="email" placeholder="john@example.com" required class="w-full px-4 py-3 rounded-xl bg-white/60 border border-pink-100/50 text-gray-800 placeholder:text-gray-300 text-sm transition-all duration-300">
+                            </div>
+                        </div>
+                        <div class="mb-5">
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Subject</label>
+                            <input type="text" name="subject" placeholder="Project Inquiry" required class="w-full px-4 py-3 rounded-xl bg-white/60 border border-pink-100/50 text-gray-800 placeholder:text-gray-300 text-sm transition-all duration-300">
+                        </div>
+                        <div class="mb-5">
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Service Needed</label>
+                            <select name="service" class="w-full px-4 py-3 rounded-xl bg-white/60 border border-pink-100/50 text-gray-800 text-sm transition-all duration-300">
+                                <option value="">Select a service</option>
+                                <option value="landing-page">Landing Page Design</option>
+                                <option value="responsive">Responsive Website Design</option>
+                                <option value="frontend">Frontend Development</option>
+                                <option value="uiux">UI/UX Design</option>
+                                <option value="portfolio">Portfolio Website</option>
+                                <option value="ecommerce">E-Commerce Website</option>
+                                <option value="redesign">Website Redesign</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                            <textarea name="message" rows="5" placeholder="Tell me about your project..." required class="w-full px-4 py-3 rounded-xl bg-white/60 border border-pink-100/50 text-gray-800 placeholder:text-gray-300 text-sm transition-all duration-300 resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary text-white w-full py-4 rounded-2xl font-semibold text-base inline-flex items-center justify-center gap-3">
+                            <span>Send Message</span>
+                            <iconify-icon icon="lucide:send" width="18"></iconify-icon>
+                        </button>
+                        <p class="text-xs text-gray-400 text-center mt-4">I typically respond within 24 hours.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="relative py-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="reveal-scale">
+                <div class="relative rounded-3xl overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-r from-pink-600 via-pink-500 to-rose-500"></div>
+                    <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(white 1px,transparent 1px);background-size:20px 20px"></div>
+                    <div class="relative z-10 px-8 py-16 lg:py-20 text-center">
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4">Ready to Start Your Project?</h2>
+                        <p class="text-pink-100 text-lg max-w-2xl mx-auto mb-8">Let's bring your vision to life with a modern, responsive website that makes an impact.</p>
+                        <div class="flex flex-wrap gap-4 justify-center">
+                            <a href="#contact" class="bg-white text-pink-600 px-8 py-4 rounded-2xl font-semibold inline-flex items-center gap-3 hover:bg-pink-50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                                Get Started <iconify-icon icon="lucide:arrow-right" width="18"></iconify-icon>
+                            </a>
+                            <a href="#projects" class="border-2 border-white/30 text-white px-8 py-4 rounded-2xl font-semibold inline-flex items-center gap-3 hover:bg-white/10 transition-all duration-300">
+                                View My Work <iconify-icon icon="lucide:external-link" width="18"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="relative bg-gradient-to-b from-pink-50 to-beige-100 border-t border-pink-100/50 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500 to-pink-700 flex items-center justify-center text-white font-serif font-bold text-lg">H</div>
+                        <span class="font-serif text-xl font-semibold text-gray-900">Hoorain Manzoor Hussain</span>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6 max-w-md">Frontend Web Designer & Developer from Karachi, Pakistan. Creating modern, responsive digital experiences for brands and businesses.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white border border-pink-100/50 flex items-center justify-center text-gray-500 hover:text-pink-600 hover:border-pink-300 hover:scale-110 transition-all duration-300"><iconify-icon icon="lucide:linkedin" width="18"></iconify-icon></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white border border-pink-100/50 flex items-center justify-center text-gray-500 hover:text-pink-600 hover:border-pink-300 hover:scale-110 transition-all duration-300"><iconify-icon icon="lucide:github" width="18"></iconify-icon></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white border border-pink-100/50 flex items-center justify-center text-gray-500 hover:text-pink-600 hover:border-pink-300 hover:scale-110 transition-all duration-300"><iconify-icon icon="lucide:instagram" width="18"></iconify-icon></a>
+                        <a href="mailto:hooriyamanzoorhusssain@gmail.com" class="w-10 h-10 rounded-xl bg-white border border-pink-100/50 flex items-center justify-center text-gray-500 hover:text-pink-600 hover:border-pink-300 hover:scale-110 transition-all duration-300"><iconify-icon icon="lucide:mail" width="18"></iconify-icon></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-sm text-gray-500 hover:text-pink-600 transition-colors duration-300">About Me</a></li>
+                        <li><a href="#skills" class="text-sm text-gray-500 hover:text-pink-600 transition-colors duration-300">Skills</a></li>
+                        <li><a href="#services" class="text-sm text-gray-500 hover:text-pink-600 transition-colors duration-300">Services</a></li>
+                        <li><a href="#projects" class="text-sm text-gray-500 hover:text-pink-600 transition-colors duration-300">Projects</a></li>
+                        <li><a href="#contact" class="text-sm text-gray-500 hover:text-pink-600 transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Projects</h4>
+                    <ul class="space-y-3">
+                        <!-- 🔴 Footer project links — also point to GitHub Pages -->
+                        <li><a href="https://yourusername.github.io/landing-page/" target="_blank" rel="noopener noreferrer" class="text-sm text-gray-500 hover:text-pink-600 transition-colors duration-300">Landing Page</a></li>
+                        <li><a href="https://yourusername.github.io/pizza-website/" target="_blank" rel="noopener noreferrer" class="text-sm text-gray-500 hover:text-pink-600 transition-colors duration-300">Pizza Restaurant (4 Pages)</a></li>
+                        <li><a href="https://yourusername.github.io/inavon-global/" target="_blank" rel="noopener noreferrer" class="text-sm text-gray-500 hover:text-pink-600 transition-colors duration-300">Inavon Global (E-Commerce)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-pink-100/50 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-gray-400">&copy; 2025 Hoorain Manzoor Hussain. All rights reserved.</p>
+                <p class="text-sm text-gray-400 flex items-center gap-1">Crafted with <iconify-icon icon="lucide:heart" width="14" class="text-pink-500"></iconify-icon> in Karachi, Pakistan</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast -->
+    <div id="toast" class="toast glass rounded-2xl border border-pink-200/50 shadow-xl">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center"><iconify-icon icon="lucide:check" width="18" class="text-green-600"></iconify-icon></div>
+            <div>
+                <div class="text-sm font-semibold text-gray-800">Message Sent!</div>
+                <div class="text-xs text-gray-500">Thank you, I'll respond shortly.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500 to-pink-700 text-white flex items-center justify-center shadow-lg shadow-pink-300/30 z-50 opacity-0 translate-y-4 transition-all duration-500 hover:scale-110 hover:shadow-xl">
+        <iconify-icon icon="lucide:chevron-up" width="22"></iconify-icon>
+    </button>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const p = document.getElementById('preloader');
+                p.style.opacity = '0';
+                setTimeout(() => p.style.display = 'none', 700);
+            }, 800);
+        });
+
+        // Navbar scroll shadow
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.style.boxShadow = window.scrollY > 100 ? '0 4px 30px rgba(236,72,153,.1)' : 'none';
+        });
+
+        // Mobile menu
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileClose = document.getElementById('mobile-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function openMenu() { mobileMenu.classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function closeMenu() { mobileMenu.classList.remove('open'); document.body.style.overflow = ''; }
+
+        mobileToggle.addEventListener('click', openMenu);
+        mobileClose.addEventListener('click', closeMenu);
+        mobileLinks.forEach(l => l.addEventListener('click', closeMenu));
+
+        // Reveal on scroll
+        const revealEls = document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
+        const revealObs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+        }, { threshold: .1, rootMargin: '0px 0px -50px 0px' });
+        revealEls.forEach(el => revealObs.observe(el));
+
+        // Skill bars
+        const skillBars = document.querySelectorAll('.skill-bar');
+        const skillObs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+        }, { threshold: .5 });
+        skillBars.forEach(b => skillObs.observe(b));
+
+        // Counter animation
+        function animateCounter(el, target, suffix = '+') {
+            let cur = 0; const inc = target / 60;
+            const timer = setInterval(() => {
+                cur += inc;
+                if (cur >= target) { cur = target; clearInterval(timer); }
+                el.textContent = Math.floor(cur) + suffix;
+            }, 30);
+        }
+        const statsObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    animateCounter(document.getElementById('stat-projects'), 3, '+');
+                    animateCounter(document.getElementById('stat-clients'), 5, '+');
+                    animateCounter(document.getElementById('stat-pages'), 6, '+');
+                    statsObs.disconnect();
+                }
+            });
+        }, { threshold: .5 });
+        statsObs.observe(document.getElementById('stat-projects'));
+
+        // Contact form
+        const contactForm = document.getElementById('contact-form');
+        const toast = document.getElementById('toast');
+        contactForm.addEventListener('submit', e => {
+            e.preventDefault();
+            toast.classList.add('show');
+            contactForm.reset();
+            setTimeout(() => toast.classList.remove('show'), 4000);
+        });
+
+        // Back to top
+        const btt = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) { btt.style.opacity = '1'; btt.style.transform = 'translateY(0)'; }
+            else { btt.style.opacity = '0'; btt.style.transform = 'translateY(16px)'; }
+        });
+        btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Active nav link
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        window.addEventListener('scroll', () => {
+            let cur = '';
+            sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+            navLinks.forEach(l => {
+                l.classList.remove('text-pink-600');
+                if (l.getAttribute('href') === `#${cur}`) l.classList.add('text-pink-600');
+            });
+        });
+    </script>
+</body>
+</html>
